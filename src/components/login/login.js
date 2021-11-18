@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import './login.css';
 
 
 export default class Login extends React.Component {
@@ -12,12 +13,13 @@ export default class Login extends React.Component {
     }
 
     IniciarSesion(){
-        alert( "usuario: " + this.state.usuario +" "+ "password: " + this.state.password)
+        // eslint-disable-next-line
+        alert( "usuario: " + this.state.usuario +" "+ "password: " + this.state.password) 
     }
 
     render() { 
         return (
-            <Container id="login-container" style={{marginTop: 200}}>
+            <Container id="login-container">
                 <Row>
                     <Col>
                         <Row>
@@ -31,21 +33,21 @@ export default class Login extends React.Component {
                                 lg={{span:4, offset:4}}
                                 xl={{span:4, offset:4}}
                             >
-                                <Form style={{width: "100%"}}>
+                                <Form >
                                 <Form.Group className="mb-3" >
-                                    <Form.Label style={{float: "left"}}>Usuario</Form.Label>
+                                    <Form.Label >Usuario</Form.Label>
                                     <Form.Control 
                                         onChange= { e => this.setState({ usuario: e.target.value })}
                                     />
                                 </Form.Group>
 
                                 <Form.Group className="mb-3" >
-                                    <Form.Label style={{float: "left"}}>Contraseña</Form.Label>
+                                    <Form.Label >Contraseña</Form.Label>
                                     <Form.Control type="password" 
                                          onChange= { e => this.setState({ password: e.target.value })}
                                     />
                                 </Form.Group>               
-                                <Button variant="primary" style={{width: "100%"}}
+                                <Button variant="primary" 
                                     onClick={ ()=> this.IniciarSesion()}
                                 >
                                     Iniciar Sesión
